@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <th:block th:fragment="table">
+            <table id="table" class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Book</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">ISBN</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book : ${books}">
+                    <td scope="row" th:text="${book.getId()}"></td>
+                    <td th:text="${book.getName()}"></td>
+                    <td th:text="${book.getAuthor()}"></td>
+                    <td th:text="${book.getIsbn()}"></td>
+                </tr>
+                </tbody>
+            </table>
+    </th:block>
+</body>
+</html>
